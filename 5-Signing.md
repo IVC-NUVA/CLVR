@@ -33,7 +33,7 @@ The overall object structure is thus finally:
 <table>
 <tbody>
 <tr><td colspan=4>Tag (18) - COSE object</td><td>D2</td></tr>
-<tr><td rowspan=12 valign=top>Array(4)</td><td colspan=3></td><td>84</td></tr>    
+<tr><td rowspan=12 valign=top>Array(4)</td><td colspan=3></td><td>84</td></tr>
     <tr><td rowspan=4 valign=top>Bytes(3)</td><td colspan=2></td><td>43</td></tr>
         <tr><td rowspan=3 style="vertical-align:top">Map(1)</td><td></td><td>A1</td></tr>
 		<tr><td>1(COSE algorithm)</td><td>01</td></tr>
@@ -42,8 +42,8 @@ The overall object structure is thus finally:
     <tr><td colspan=2>4(Key identifier)</td><td>04</td></tr>
         <tr><td colspan=2>"SYA25A" (id. in keystore)</td><td>46 53 59 41 32 35 41</td></tr>
     <tr><td rowspan=2 valign=top>Bytes (XX XX)</td><td colspan=2></td><td>59 XX XX</td></tr>
-        <tr><td colspan=2>CWT content</td><td>...</td></tr>
-    <tr><td rowspan=2 valign=top>Bytes (64)</td><td colspan=2></td><td>58 40</td></tr>
+<tr><td colspan=2>CWT content</td><td>...</td></tr>
+	<tr><td rowspan=2 valign=top>Bytes(64)</td><td colspan=2></td><td>58 40</td></tr>
         <tr><td colspan=2 >Signature x and y</td><td>...</td></tr>
 </tbody>
 </table>
