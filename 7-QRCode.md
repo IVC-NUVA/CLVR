@@ -1,8 +1,6 @@
 # QR code representation
 
-## Base45 conversion[^9]
-
-[^9]: <https://datatracker.ietf.org/doc/rfc9285/>
+## [Base45](https://datatracker.ietf.org/doc/rfc9285/) conversion
 
 QR codes are designed to be most efficient when representing homogeneous data. The most common class of data is alphanumeric, with a character set limited to 45 characters.
 
@@ -42,9 +40,7 @@ LG9Q2.D4DS3UQ5A+I8DV DNH51TSP0FHTU4:9Q:3H6Y7R/JD UH6E:ZBBTN1RERORJ14000K96\$HA
 
 ## QR code capacity
 
-QR codes are squares, formed by an assembly of square modules. The number of modules defines a QR Code version[^10], ranging from Version 1 (21x21 modules) to Version 40 (177x177 modules).
-
-[^10]: <https://www.qrcode.com/en/about/version.html>
+QR codes are squares, formed by an assembly of square modules. The number of modules defines a [QR Code version](https://www.qrcode.com/en/about/version.html), ranging from Version 1 (21x21 modules) to Version 40 (177x177 modules).
 
 They include redundant information for error correction, with 4 levels of data correction:
 
@@ -66,9 +62,7 @@ Since a CLVR for 100 vaccines fits within 2700 characters, it means that it can 
 
 ## QR code dimensions
 
-When using a dot-based printer, such as an inkjet printer, the recommendation from the QR Code designer is to have at least 4 dots per module[^11], that is 2x2. To secure it further, the calculation is done with a 3x3 module and a low -range printer with a resolution of 300 dots per inch (dpi).
-
-[^11]: <https://www.qrcode.com/en/howto/cell.html>
+When using a dot-based printer, such as an inkjet printer, the [recommendation from the QR Code designer](https://www.qrcode.com/en/howto/cell.html) is to have at least 4 dots per module, that is 2x2. To secure it further, the calculation is done with a 3x3 module and a low -range printer with a resolution of 300 dots per inch (dpi).
 
 In that case, we have 100 modules per inch, and the 161 modules in a version 36 code will require 1.61 inches, that is 4.1 cm.
 

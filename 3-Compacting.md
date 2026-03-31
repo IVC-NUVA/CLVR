@@ -2,9 +2,7 @@
 
 ## The CBOR format
 
-The Compact Binary Object Representation (CBOR) [^3]is a format used to minimize the representation of structured data. It consists in a sequence of bytes fields, each starting with a one-byte marker for its type and argument, then a content depending upon the type.
-
-[^3]: <https://datatracker.ietf.org/doc/html/rfc8949>
+The [Compact Binary Object Representation (CBOR)](https://datatracker.ietf.org/doc/html/rfc8949) is a format used to minimize the representation of structured data. It consists in a sequence of bytes fields, each starting with a one-byte marker for its type and argument, then a content depending upon the type.
 
 The type is encoded on 3 bits, thus coding 8 possible types. In the CLVR, only types 0 to 7 are used.
 
@@ -22,11 +20,9 @@ The argument is encoded on 5 bits, thus coding 64 possible arguments. Arguments 
 
 Maps are associative arrays, that is a set of key-value pairs.
 
-Tags are used to represent the role of a CBOR object, their values are published by the Internet Assigned Numbers Authority (IANA) at <https://www.iana.org/assignments/cbor-tags/cbor-tags.xhtml>
+Tags are used to represent the role of a CBOR object, their values are published by the Internet Assigned Numbers Authority (IANA) [here](https://www.iana.org/assignments/cbor-tags/cbor-tags.xhtml).
 
-Usual tools and libraries for handling CBOR are converters between CBOR and the more frequent JSON format[^4].
-
-[^4]: Such as <https://cbor.me/>
+Usual tools and libraries for handling CBOR are converters between CBOR and the more frequent JSON format, such as <https://cbor.me/>.
 
 ## Optimizing for CBOR
 
@@ -65,30 +61,30 @@ or, in CBOR representation (truncated to first vaccine):
 
 <table>
 <tbody>
-<tr><td rowspan=24 style="vertical-align:top">Map(4)</td><td colspan=3></td><td>A4</td></tr>
-    <tr><td colspan=3>"ver" (key)</td><td>53 76 65 72</td></tr>
-    <tr><td colspan=3>"1.0.0" (value)</td><td>65 31 2E 30 2E 30</td></tr>
-    <tr><td colspan=3>"nam" (key)</td><td>63 6E 61 6D</td></tr>
-    <tr><td rowspan=5 style="vertical-align:top">"Map(2) (value)"</td><td colspan=2></td><td>A2</td></tr>
-	    <tr><td colspan=2>"fnt" (key)</td><td>63 66 6E 74</td></tr>
-	    <tr><td colspan=2>"DOË"</td><td>64 44 4F C3 8B</td></tr>
-	    <tr><td colspan=2>"gnt" (key)</td><td>63 67 6E 74</td></tr>
-	    <tr><td colspan=2>"John"</td><td>64 4A 6F 68 6E</td></tr>
+<tr><td rowspan=24 valign=top>Map(4)</td><td colspan=3></td><td>A4</td></tr>
+    <tr><td colspan=3>"ver"</td><td>53 76 65 72</td></tr>
+    <tr><td colspan=3>=> "1.0.0"</td><td>65 31 2E 30 2E 30</td></tr>
+    <tr><td colspan=3>"nam"</td><td>63 6E 61 6D</td></tr>
+    <tr><td rowspan=5 valign=top>=> Map(2)"</td><td colspan=2></td><td>A2</td></tr>
+	    <tr><td colspan=2>"fnt"</td><td>63 66 6E 74</td></tr>
+	    <tr><td colspan=2>=> "DOË"</td><td>64 44 4F C3 8B</td></tr>
+	    <tr><td colspan=2>"gnt"</td><td>63 67 6E 74</td></tr>
+	    <tr><td colspan=2>=> "John"</td><td>64 4A 6F 68 6E</td></tr>
     <tr><td colspan=3>"dob" (key)</td><td>63 64 6F 62</td></tr>
-    <tr><td colspan=3>"2017-07-19" (value)</td><td>6A 32 30 31 37 2D 30 37 2D 31 39</td></tr>
+    <tr><td colspan=3>=> "2017-07-19" (value)</td><td>6A 32 30 31 37 2D 30 37 2D 31 39</td></tr>
     <tr><td colspan=3>"v" (key)</td><td>61 76</td></tr>
-	<tr><td rowspan=12 style="vertical-align:top">Array[2] (value)</td><td colspan=2></td><td>82</td></tr>
-	    <tr><td rowspan=11 style="vertical-align:top">Map(5) (element)</td><td></td><td>A5</td></tr>
+	<tr><td rowspan=12 valign=top>=> Array[2] (value)</td><td colspan=2></td><td>82</td></tr>
+	    <tr><td rowspan=11 valign=top>Map(5) (element)</td><td></td><td>A5</td></tr>
 		    <tr><td>"reg" (key)</td><td>63 72 65 67</td></tr>
-		    <tr><td>"FRA" (value)</td><td>63 46 52 41</td></tr>
+		    <tr><td>=> "FRA" (value)</td><td>63 46 52 41</td></tr>
 		    <tr><td>"rep" (key)</td><td>63 72 65 70</td></tr>
-		    <tr><td>36 (value)</td><td>18 24</td></tr>
+		    <tr><td>=> 36 (value)</td><td>18 24</td></tr>
 		    <tr><td>"i" (key)</td><td>61 69</td></tr>
-		    <tr><td>1245 (value)</td><td>19 04 DD</td></tr>
+		    <tr><td>=> 1245 (value)</td><td>19 04 DD</td></tr>
 		    <tr><td>"a" (key)</td><td>61 61</td></tr>
-		    <tr><td>1386 (value)</td><td>19 05 6A</td></tr>
+		    <tr><td>=> 1386 (value)</td><td>19 05 6A</td></tr>
 		    <tr><td>"mp" (key)</td><td>62 6D 70</td></tr>
-		    <tr><td>29 (value)</td><td>18 1D</td></tr>
+		    <tr><td> => 29 (value)</td><td>18 1D</td></tr>
 		   
 </tbody>
 </table>

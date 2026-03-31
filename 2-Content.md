@@ -13,9 +13,7 @@ Given the above requirements, the CLVR must then contain:
 
 ## Example data
 
-In this document, the CLVR content will be exemplified using the data found in the EVC generator demonstrator[^2].
-
-[^2]: <https://github.com/EUVABECO/EVC-generator>
+In this document, the CLVR content will be exemplified using the data found in the [EVC generator demonstrator](https://github.com/EUVABECO/EVC-generator).
 
 <table>
     <tbody>
@@ -40,10 +38,10 @@ In this document, the CLVR content will be exemplified using the data found in t
 
 The CLVR is encoded as a COSE object (described in the below chapters). It consists of:
 
--   A signature characterization header (5.2)
--   A content header (see 4.3)
--   The actual content, consisting of the patient identity traits and the administered vaccines (4.2)
--   The signature value (5.3)
+-   A [signature characterization header](5-Signing.md#signed-structure)
+-   A [content header](4-CWT.md)
+-   The [actual content](3-Compacting.md), consisting of the patient identity traits and the administered vaccines
+-   The [signature value](5-Signing.md#computing-the-signature)
 
 The diagram below presents this structure with the typical size in bytes of the different sections (before compression).
 <table>

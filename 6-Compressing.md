@@ -17,9 +17,7 @@ Yet, if we adopt conservative values for these attributes, the overall size of t
 
 Thus, an overall size of 541 bytes for 10 recorded vaccines, or 3 331 bytes for 100 recorded vaccines.
 
-It can be significantly reduced by applying the DEFLATE[^8] algorithm, as implemented in the ubiquitous zlib compression library.
-
-[^8]: <https://datatracker.ietf.org/doc/html/rfc1951>
+It can be significantly reduced by applying the [DEFLATE algorithm](https://datatracker.ietf.org/doc/html/rfc1951), as implemented in the ubiquitous zlib compression library.
 
 ## DEFLATE algorithm
 

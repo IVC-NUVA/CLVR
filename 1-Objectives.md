@@ -22,7 +22,7 @@ Contrary to most medications, vaccines are not substitutable even if they have a
 
 ## Compacity
 
-As discussed in the QR code representation chapter below, the whole CLVR should fit in less than 1800 bytes in binary format, that is 2700 alphanumeric characters in Base45 format.
+As discussed in the [QR code representation](7-QRCode.md) page , the whole CLVR should fit in less than 1800 bytes in binary format, that is 2700 alphanumeric characters in Base45 format.
 
 ## Authenticity
 
