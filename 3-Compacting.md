@@ -10,8 +10,6 @@ The type is encoded on 3 bits, thus coding 8 possible types. In the CLVR, only t
 
 The argument is encoded on 5 bits, thus coding 64 possible arguments. Arguments below 0x18 are self-contained values, while arguments 0x18 to 0x1B means that the value is to be found in the next 1,2, 4 or 8 bytes. Further values are not used yet.
 
-Table 2 - CBOR Types
-
 | Type             | 3 bits | 5 bits      | Examples           | Decodes as                                                              |
 |------------------|--------|-------------|--------------------|-------------------------------------------------------------------------|
 | Unsigned integer | 0x00   | Value/Size  | 0x12<br>0x19 04 DD | 18 (0x12)<br>1245 (0x4DD)                                               |

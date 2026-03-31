@@ -14,13 +14,11 @@ QR codes are designed to be most efficient when representing homogeneous data. T
 | 3. | U  | V  | W  | X  | Y  | Z  |    | \$ | %  | \* |
 | 4. | +  | -  | .  | /  | :  |    |    |    |    |    |
 
-(Exemple: 13 = D)
+(Exemple: letter D is coded as 13)
 
 The compressed COSE object is a binary content. To onboard it into alphanumeric characters, it is converted by replacing 2 bytes (256x256 = 65 536) with 3 characters (45x45x45 = 91 125) in the QR code charset.
 
 The replacement is done by starting with the lowest weight value, while in the original binary content the first byte is the higher weight.
-
-Table 10 - Example of Base45 encoding
 
 | Coding         | Hexadecimal | Decimal | Base 45             |
 |----------------|-------------|---------|---------------------|
@@ -59,8 +57,6 @@ Considering that the CLVR document can be read and reprinted whenever needed, a 
 
 The table below gives some capacities for storage of alphanumeric content with a medium error correction level.
 
-Table 11 - QRCode storage capacity
-
 | Level           | 21   | 24   | 27   | 30   | 33   | 36   | 39   |
 |-----------------|------|------|------|------|------|------|------|
 | Modules per row | 101  | 113  | 125  | 137  | 149  | 161  | 173  |
@@ -80,4 +76,3 @@ The CLVR specification thus requires having it represented as a 5x5 cm square.
 
 ![](media/84c3df7bf0b371b63dd15e98aea9ccf5.png)
 
-Figure 5 - QR Code for the example data

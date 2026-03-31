@@ -7,7 +7,7 @@ The overall size of the COSE object depends upon:
 -   The length of some strings: key identifier, name and given name, registries names.
 -   The numeric values for the ages of administration, vaccine codes, and local indexes
 
-Yet, if we adopt conservative values for these attributes, the overall size of the COSE object is the one sketched in Figure 1 - CLVR global structure:
+Yet, if we adopt conservative values for these attributes, the overall size of the COSE object is the one presented in the [content](2-Content.md) section:
 
 -   31 bytes for the signature header
 -   24 bytes for the CWT header
@@ -37,8 +37,6 @@ The result of deflation is not directly predictable. Yet, it can be evaluated th
 The following graph have been established by running 1000 times the creation and compression of CLVR with totally random vaccination events, then with a fixed registry (that corresponds to a person that would have received all his vaccines in a same country) and random administrations. Repeating the experience always give the same results, with only a few bytes of difference and a spread of less than 3% between maximum and minimum value for 60 vaccines or more.
 
 ![](media/175fd24601a154b774b20e1ae517fc52.png)
-
-Figure 3 - Impact of deflation
 
 The deflation algorithm run on totally random data reduces by half the size of a CLVR with 100 vaccines, and introducing a minimum of repeatability reduces it again to 38%.
 

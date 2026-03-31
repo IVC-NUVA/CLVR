@@ -11,7 +11,7 @@ This structure is a CBOR map with some predefined numeric keys, published by IAN
 | 1         | Issuer (string)                             |
 | 4         | Expiration time (in Unix format)            |
 | 6         | Issued at time (in Unix format)             |
-| -260      | Health certificate (the [compacted content](Compacting.md)) |
+| -260      | Health certificate (the [compacted content](3-Compacting.md)) |
 
 The content header is thus as follows, followed by the HCERT content:
 

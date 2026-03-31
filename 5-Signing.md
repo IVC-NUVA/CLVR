@@ -32,18 +32,17 @@ Contrary to many signing mechanisms, the public part of the signing key is not e
 Since the content of the data and the selected algorithm could be encrypted, these sections are represented as byte arrays.
 
 The overall object structure is thus finally:
-
 <table>
 <tbody>
 <tr><td colspan=4>Tag (18)</td><td>D2</td></tr>
 <tr><td colspan=4>Array(4)</td><td>84</td></tr>    
     <tr><td rowspan=11></td><td colspan=3>Bytes(3)</td><td>43</td></tr>
         <tr><td rowspan=3></td><td colspan=2>Map(1)</td><td>A1</td></tr>
-		<tr><td rowspan=2></td><td>1(key)</td><td>01</td></tr>
+		<tr><td rowspan=2></td><td>1(key for algorithm)</td><td>01</td></tr>
 		    <tr><td>-7 (value)</td><td>26</td></tr>
     <tr><td colspan=3>Map(1)</td><td>A1</td></tr>
-    <tr><td rowspan=2></td><td colspan=2>4(key)</td><td>04</td></tr>
-        <tr><td colspan=2>"SYA25A"</td><td>46 53 59 41 32 35 41</td></tr>
+    <tr><td rowspan=2></td><td colspan=2>4(key for key identifier)</td><td>04</td></tr>
+        <tr><td colspan=2>"SYA25A" (value)</td><td>46 53 59 41 32 35 41</td></tr>
     <tr><td rowspan=2>Bytes (XX XX)</td><td colspan=2></td><td>59 XX XX</td></tr>
         <tr><td colspan=2>CWT content</td><td>...</td></tr>
     <tr><td rowspan=2>Bytes (64)</td><td colspan=2></td><td>58 40</td></tr>
