@@ -28,6 +28,8 @@ The Deflate algorithm combines two stages of compression:
 
 It is particularly efficient for CLVR content, that is highly repetitive.
 
+The raw deflation result (without ZIP header) is then used for the further stage of [QRCode encoding](7-QRCode.md).
+
 ## Deflation results
 
 The result of deflation is not directly predictable. Yet, it can be evaluated through large scale trials on random contents.

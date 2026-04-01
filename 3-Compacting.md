@@ -36,7 +36,7 @@ This implies that the use of text strings should be minimized:
 
 Unix timestamps are generally used in programming and are used for example in the standardized content header for representing the issuing date of a CLVR. But they count the number of elapsed seconds since January 1st, 1970. This is too precise for the need of vaccination history and does not go far enough in the past.
 
-As an alternative, in the CLVR:
+To cope with this limitation, in the CLVR:
 
 -   The date of birth is stored in textual format YYYY-MM-DD.
 -   All vaccine administration dates are stored as a number of days since the date of birth.

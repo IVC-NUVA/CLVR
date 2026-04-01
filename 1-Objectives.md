@@ -10,7 +10,7 @@ The CLVR is a digital content that:
 
 ## Lifetime vaccination history
 
-When considering the vaccination schedules for all diseases, for persons with reinforced vaccination needs, the total number of vaccines received in a lifetime is always below 65.
+When considering all vaccination schedules, even for persons with special or increased vaccination needs, the total number of vaccines received over a lifetime remains below 65.
 
 This figure is obtained with the convention that for yearly vaccines, like influenza or now COVID-19, only the 5 last administrations are recorded.
 
@@ -33,5 +33,4 @@ The CLVR should be verifiable by the receiving health professional, whatever its
 
 ## References to reliable sources
 
-When a health professional administers a vaccine and delivers a new CLVR, he reports the previous vaccinations on the basis of the former CLVR. To keep the distinction between the records claimed by each vaccinating professional, every administration record is bound to a given master record, where all the details about the administration event are kept. These master records are organized at the national level, without assuming on whether they are held centrally or distributed across health facilities.
-
+When a health professional administers a vaccine and issues a new CLVR, prior vaccinations are included based on the information from the previous CLVR. Each administration event is also recorded in a repository system which serves as the authoritative source of record. These repositories  may be national or distributed across health facilities, and are referenced within a national registry or repositories.

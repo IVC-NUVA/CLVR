@@ -8,7 +8,7 @@ Given the above requirements, the CLVR must then contain:
 -   For each administered vaccine:
     -   used vaccine product,
     -   date of administration,
-    -   reference to the master record, identified by a national registry, a repository of master records within this registry and a local index in this repository.
+    -   reference to an authoritative record, identified by a national registry, a repository of authoritative records within this registry and a local index in this repository.
 -   A digital signature of the above contents
 
 ## Example data
