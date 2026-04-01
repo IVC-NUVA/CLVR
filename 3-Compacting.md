@@ -4,14 +4,14 @@
 
 The [Compact Binary Object Representation (CBOR)](https://datatracker.ietf.org/doc/html/rfc8949) is a format used to minimize the representation of structured data. It consists in a sequence of bytes fields, each starting with a one-byte marker for its type and argument, then a content depending upon the type.
 
-The type is encoded on 3 bits, thus coding 8 possible types. In the CLVR, only types 0 to 7 are used.
+The type is encoded on 3 bits, thus coding 8 possible types. In the CLVR, only types 0 to 6 are used.
 
 The argument is encoded on 5 bits, thus coding 64 possible arguments. Arguments below 0x18 are self-contained values, while arguments 0x18 to 0x1B means that the value is to be found in the next 1,2, 4 or 8 bytes. Further values are not used yet.
 
 | Type             | 3 bits | 5 bits      | Examples           | Decodes as                                                              |
 |------------------|--------|-------------|--------------------|-------------------------------------------------------------------------|
 | Unsigned integer | 0x00   | Value/Size  | 0x12<br>0x19 04 DD | 18 (0x12)<br>1245 (0x4DD)                                               |
-| Negative integer | 0x20   | Value/Size  | 0x26<br>0x39 01 03 | -7 (-1-0x06)<br>-260 (-1-0x103)                                         |
+| Negative integer | 0x20   | Value/Size  | 0x28<br>0x39 01 03 | -9 (-1-0x08)<br>-260 (-1-0x103)                                         |
 | Byte string      | 0x40   | Length/Size | 0x58 40 …..        | Next 64 bytes                                                           |
 | Text string      | 0x60   | Length/Size | 0x63 46 52 41      | FRA (UTF-8 46 52 41)                                                    |
 | Array            | 0x80   | Length/Size | 0x84               | Array of 4 elements                                                     |

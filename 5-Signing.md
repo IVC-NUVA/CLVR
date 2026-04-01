@@ -23,7 +23,9 @@ The attributes of the signature in the signature header are represented with map
 | 1         | COSE algorithm |
 | 4         | Key identifier |
 
-The COSE algorithm values are taken from the COSE algorithms listed in the same page. The current implementation uses the ES256 algorithm, encoded as -7. This algorithm produces a 64 bytes signature that will be appended at the end of the object.
+The COSE algorithm values are taken from the COSE algorithms listed in the same page. The current implementation uses the ES256P algorithm, encoded as -9. This algorithm produces a 64 bytes signature that will be appended at the end of the object.
+
+For backward compatiblity reasons, the same algorithm may also be called ES256 and be encoded as -7. CLVR decoders should accept both representations.
 
 Contrary to many signing mechanisms, the public part of the signing key is not embedded into the signed document, but referenced by a key identifier, that will be used to fetch the public key from a commonly agreed keystore (normally exposed by the WHO Global Digital Health Certification Network (GDHCN). In the current implementation of CLVR, the keystore is exposed as a JWKS resource [here](https://keys.euvabeco.eu/.well-known/jwks.json).
 
@@ -37,12 +39,32 @@ The overall object structure is thus finally:
     <tr><td rowspan=4 valign=top>Bytes(3)</td><td colspan=2></td><td>43</td></tr>
         <tr><td rowspan=3 style="vertical-align:top">Map(1)</td><td></td><td>A1</td></tr>
 		<tr><td>1(COSE algorithm)</td><td>01</td></tr>
-		    <tr><td>-7 (ES256)</td><td>26</td></tr>
+		    <tr><td>=> -9 (ESP256)</td><td>28</td></tr>
     <tr><td rowspan=3 valign=top>Map(1)</td><td colspan=2></td><td>A1</td></tr>
     <tr><td colspan=2>4(Key identifier)</td><td>04</td></tr>
-        <tr><td colspan=2>"SYA25A" (id. in keystore)</td><td>46 53 59 41 32 35 41</td></tr>
+        <tr><td colspan=2>=> "SYA25A" (id. in keystore)</td><td>46 53 59 41 32 35 41</td></tr>
     <tr><td rowspan=2 valign=top>Bytes (XX XX)</td><td colspan=2></td><td>59 XX XX</td></tr>
-<tr><td colspan=2>CWT content</td><td>...</td></tr>
+<tr><td colspan=2>CWT content</td><td>A4 01 53 59 41 ...</td></tr>
+	<tr><td rowspan=2 valign=top>Bytes(64)</td><td colspan=2></td><td>58 40</td></tr>
+        <tr><td colspan=2 >Signature x and y</td><td>...</td></tr>
+</tbody>
+</table>
+
+Alternatively, the key identifier can also be in the first block of data (protected content). CLVR decoders should accept both formats.
+
+<table>
+<tbody>
+<tr><td colspan=4>Tag (18) - COSE object</td><td>D2</td></tr>
+<tr><td rowspan=12 valign=top>Array(4)</td><td colspan=3></td><td>84</td></tr>
+    <tr><td rowspan=6 valign=top>Bytes(11)</td><td colspan=2></td><td>4B</td></tr>
+        <tr><td rowspan=5 style="vertical-align:top">Map(2)</td><td></td><td>A1</td></tr>
+		<tr><td>1(COSE algorithm)</td><td>01</td></tr>
+		    <tr><td>=> -9 (ESP256)</td><td>28</td></tr>
+		<tr><td>4(Key identifier)</td><td>04</td></tr>
+        <tr><td>=> "SYA25A"</td><td>46 53 59 41 32 35 41</td></tr>
+    <tr><td>Map(0)</td><td colspan=2></td><td>A0</td></tr>
+    <tr><td rowspan=2 valign=top>Bytes (XX XX)</td><td colspan=2></td><td>59 XX XX</td></tr>
+<tr><td colspan=2>CWT content</td><td>A4 01 53 59 41 ...</td></tr>
 	<tr><td rowspan=2 valign=top>Bytes(64)</td><td colspan=2></td><td>58 40</td></tr>
         <tr><td colspan=2 >Signature x and y</td><td>...</td></tr>
 </tbody>

@@ -15,7 +15,7 @@ The content header is thus as follows, followed by the HCERT content:
 
 <table>
 <tbody>
-<tr><td rowspan=9 valign=top">Map(4)</td><td></td><td>A4</td></tr>
+<tr><td rowspan=9 valign=top>Map(4)</td><td></td><td>A4</td></tr>
     <tr><td>1 (Issuer)</td><td>01</td></tr>
     <tr><td> => “SYA”</td><td>53 59 41</td></tr>
     <tr><td>4 (Expiration time)</td><td>04</td></tr>
