@@ -37,11 +37,11 @@ The overall object structure is thus finally:
 <tr><td colspan=4>Tag (18) - COSE object</td><td>D2</td></tr>
 <tr><td rowspan=12 valign=top>Array(4)</td><td colspan=3></td><td>84</td></tr>
     <tr><td rowspan=4 valign=top>Bytes(3)</td><td colspan=2></td><td>43</td></tr>
-        <tr><td rowspan=3 style="vertical-align:top">Map(1)</td><td></td><td>A1</td></tr>
-		<tr><td>1(COSE algorithm)</td><td>01</td></tr>
+        <tr><td rowspan=3 valign=top>Map(1)</td><td></td><td>A1</td></tr>
+		<tr><td>1 (COSE algorithm)</td><td>01</td></tr>
 		    <tr><td>=> -9 (ESP256)</td><td>28</td></tr>
     <tr><td rowspan=3 valign=top>Map(1)</td><td colspan=2></td><td>A1</td></tr>
-    <tr><td colspan=2>4(Key identifier)</td><td>04</td></tr>
+    <tr><td colspan=2>4 (Key identifier)</td><td>04</td></tr>
         <tr><td colspan=2>=> "SYA25A" (id. in keystore)</td><td>46 53 59 41 32 35 41</td></tr>
     <tr><td rowspan=2 valign=top>Bytes (XX XX)</td><td colspan=2></td><td>59 XX XX</td></tr>
 <tr><td colspan=2>CWT content</td><td>A4 01 53 59 41 ...</td></tr>
@@ -57,10 +57,10 @@ Alternatively, the key identifier can also be in the first block of data (protec
 <tr><td colspan=4>Tag (18) - COSE object</td><td>D2</td></tr>
 <tr><td rowspan=12 valign=top>Array(4)</td><td colspan=3></td><td>84</td></tr>
     <tr><td rowspan=6 valign=top>Bytes(11)</td><td colspan=2></td><td>4B</td></tr>
-        <tr><td rowspan=5 style="vertical-align:top">Map(2)</td><td></td><td>A1</td></tr>
-		<tr><td>1(COSE algorithm)</td><td>01</td></tr>
+        <tr><td rowspan=5 valign=top>Map(2)</td><td></td><td>A2</td></tr>
+		<tr><td>1 (COSE algorithm)</td><td>01</td></tr>
 		    <tr><td>=> -9 (ESP256)</td><td>28</td></tr>
-		<tr><td>4(Key identifier)</td><td>04</td></tr>
+		<tr><td>4 (Key identifier)</td><td>04</td></tr>
         <tr><td>=> "SYA25A"</td><td>46 53 59 41 32 35 41</td></tr>
     <tr><td>Map(0)</td><td colspan=2></td><td>A0</td></tr>
     <tr><td rowspan=2 valign=top>Bytes (XX XX)</td><td colspan=2></td><td>59 XX XX</td></tr>
