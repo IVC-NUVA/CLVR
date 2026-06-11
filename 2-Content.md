@@ -11,6 +11,28 @@ Given the above requirements, the CLVR must then contain:
     -   reference to an authoritative record, identified by a national registry, a repository of authoritative records within this registry and a local index in this repository.
 -   A digital signature of the above contents
 
+## JSON representation
+The CLVR content is encoded in a binary compacted object but for convenience can be represented as a JSON structure with the following content.
+
+| L1  | L2  | Card. | Type   | Example             | Comment                                         |
+|-----|-----|-------|--------|---------------------|-------------------------------------------------|
+| ver |     | 1..1  | string | 1.0.0               | Version of the structure                        |
+| nam |     | 1..1  |        |                     | Basic identity traits                           |
+|     | fnt | 1..1  | string | DOE                 | Name                                            |
+|     | gnt | 1..1  | string | John                | First or usual given name                       |
+| dob |     | 1..1  | date   | 2017-07-19          | Date of birth                                   |
+| pid |     | 0..1  |        |                     | Optional digital identifier for the person      |
+|     | oid | 1..1  | string | 1.2.250.1.213.1.4.8 | Object identifier for the identification scheme |
+|     | id  | 1..1  | string | 1630777186051       | Person identifier within the scheme             |
+| v   |     | 0..\* |        |                     | Vaccine administration records                  |
+|     | reg | 1..1  | string | LUX                 | 2 to 6 letters code for a registry              |
+|     | rep | 1..1  | int    | 5                   | Index for a repository in a registry            |
+|     | i   | 1..1  | int    | 1296                | Reference within a repository for a given date  |
+|     | a   | 1..1  | int    | 1386                | Age in days when the vaccine was administered   |
+|     | mp  | 1..1  | int    | 29                  | NUVA code for the vaccine (here REPEVAX)        |
+
+This structure is compacted in [CBOR](3-Compacting.md), then wrapped into a [CBOR Web Token](4-CWT.md) precising some metadata, itself wrapped into a [COSE](5-Signing.md) signed envelope.
+
 ## Example data
 
 In this document, the CLVR content will be exemplified using the data found in the [EVC generator demonstrator](https://github.com/EUVABECO/EVC-generator).

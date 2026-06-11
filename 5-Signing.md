@@ -23,7 +23,7 @@ The attributes of the signature in the signature header are represented with map
 | 1         | COSE algorithm |
 | 4         | Key identifier |
 
-The COSE algorithm values are taken from the COSE algorithms listed in the same page. The current implementation uses the ES256P algorithm, encoded as -9. This algorithm produces a 64 bytes signature that will be appended at the end of the object.
+The COSE algorithm values are taken from the COSE algorithms listed in the same page. The current implementation uses the ESP256 algorithm, encoded as -9. This algorithm produces a 64 bytes signature that will be appended at the end of the object.
 
 For backward compatiblity reasons, the same algorithm may also be called ES256 and be encoded as -7. CLVR decoders should accept both representations.
 
